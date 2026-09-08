@@ -56,16 +56,31 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun ButtonText() {
+    var contador by remember { mutableIntStateOf(0) }
+
     Column(
-        modifier = Modifier.padding(16.dp),
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Hola Jose!")
-        Button(onClick = { /* acción */ }) {
+        Text(
+            text = "Hola Jose Paredes!",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Spacer(modifier = Modifier.height(12.dp))
+        Button(onClick = { contador++ }) {
             Text("Presióname")
         }
+        Spacer(modifier = Modifier.height(12.dp))
+        Text(
+            text = "Has presionado $contador veces",
+            fontSize = 18.sp
+        )
     }
 }
+
 
 @Composable
 fun ImageCheckbox() {
