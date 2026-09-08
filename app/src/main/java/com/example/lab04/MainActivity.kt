@@ -160,7 +160,13 @@ fun ViewHolaCurso() {
 @Composable
 fun GreetingPreview() {
     Lab04Theme {
+
         Greeting("JUAN PUMAHUANCA")
         Greeting("JUAN PUMAHUANCA x2")
+
+        Greeting("Jose Paredes")
+        Greeting("Jose Paredes x2")
+        Greeting("Jose Paredes x3")
+
     }
 }
