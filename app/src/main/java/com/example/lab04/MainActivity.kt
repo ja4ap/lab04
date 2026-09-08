@@ -15,9 +15,14 @@ import com.example.lab04.ui.theme.Lab04Theme
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -64,21 +69,51 @@ fun ButtonText() {
 
 @Composable
 fun ImageCheckbox() {
+    var checked by remember { mutableStateOf(false) }
+
     Column(
-        modifier = Modifier.padding(16.dp),
+        modifier = Modifier
+            .padding(24.dp)
+            .fillMaxWidth()
+            .background(Color(0xFFEFEFEF), shape = RoundedCornerShape(12.dp)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Text(
+            text = "Selecciona la opción",
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color(0xFF333333),
+            modifier = Modifier.padding(bottom = 12.dp)
+        )
         Image(
             painter = painterResource(id = R.drawable.ic_launcher_foreground),
             contentDescription = "Imagen simple",
-            modifier = Modifier.size(100.dp)
+            modifier = Modifier
+                .size(120.dp)
+                .clip(RoundedCornerShape(8.dp))
+                .border(2.dp, Color.Gray, RoundedCornerShape(8.dp))
         )
-        Checkbox(
-            checked = false,
-            onCheckedChange = { /* acción */ }
-        )
+        Spacer(modifier = Modifier.height(16.dp))
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Checkbox(
+                checked = checked,
+                onCheckedChange = { checked = it },
+                colors = CheckboxDefaults.colors(
+                    checkedColor = Color(0xFF6200EE),
+                    uncheckedColor = Color.Gray
+                )
+            )
+            Text(
+                text = if (checked) "Activado" else "Desactivado",
+                fontSize = 18.sp,
+                color = if (checked) Color(0xFF6200EE) else Color.Gray
+            )
+        }
     }
 }
+
 
 @Composable
 fun ViewHolaCurso() {
