@@ -19,7 +19,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 
 class MainActivity : ComponentActivity() {
@@ -74,6 +76,27 @@ fun ImageCheckbox() {
         Checkbox(
             checked = false,
             onCheckedChange = { /* acción */ }
+        )
+    }
+}
+
+@Composable
+fun ViewHolaCurso() {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = "Welcome to the Course!",
+            fontSize = 28.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        Text(
+            text = "Hello, Jose Paredes!",
+            fontSize = 20.sp
         )
     }
 }
