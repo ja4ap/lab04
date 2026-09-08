@@ -60,7 +60,23 @@ fun ButtonText() {
     }
 }
 
-
+@Composable
+fun ImageCheckbox() {
+    Column(
+        modifier = Modifier.padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.ic_launcher_foreground),
+            contentDescription = "Imagen simple",
+            modifier = Modifier.size(100.dp)
+        )
+        Checkbox(
+            checked = false,
+            onCheckedChange = { /* acción */ }
+        )
+    }
+}
 
 
 
