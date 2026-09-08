@@ -162,5 +162,6 @@ fun GreetingPreview() {
     Lab04Theme {
         Greeting("Jose Paredes")
         Greeting("Jose Paredes x2")
+        Greeting("Jose Paredes x3")
     }
 }
