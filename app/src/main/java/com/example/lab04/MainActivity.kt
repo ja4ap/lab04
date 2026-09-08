@@ -19,7 +19,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 
 class MainActivity : ComponentActivity() {
@@ -49,16 +51,31 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun ButtonText() {
+    var contador by remember { mutableIntStateOf(0) }
+
     Column(
-        modifier = Modifier.padding(16.dp),
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Hola Jose!")
-        Button(onClick = { /* acción */ }) {
+        Text(
+            text = "Hola Jose Paredes!",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Spacer(modifier = Modifier.height(12.dp))
+        Button(onClick = { contador++ }) {
             Text("Presióname")
         }
+        Spacer(modifier = Modifier.height(12.dp))
+        Text(
+            text = "Has presionado $contador veces",
+            fontSize = 18.sp
+        )
     }
 }
+
 
 @Composable
 fun ImageCheckbox() {
@@ -74,6 +91,27 @@ fun ImageCheckbox() {
         Checkbox(
             checked = false,
             onCheckedChange = { /* acción */ }
+        )
+    }
+}
+
+@Composable
+fun ViewHolaCurso() {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = "Welcome to the Course!",
+            fontSize = 28.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        Text(
+            text = "Hello, Jose Paredes!",
+            fontSize = 20.sp
         )
     }
 }
