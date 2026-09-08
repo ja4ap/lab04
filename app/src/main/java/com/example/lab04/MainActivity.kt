@@ -153,20 +153,18 @@ fun ViewHolaCurso() {
 
 
 
+//Nuevo cambio Jose Paredes
+//Nuevo cambio Jose Paredes
 //ESTE PRIMER CAMBIO LO ESTOY HACIENDO YO: JUAN PABLO PUMAHUANCA OCHOA
+
 
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     Lab04Theme {
-
-        Greeting("JUAN PUMAHUANCA")
-        Greeting("JUAN PUMAHUANCA x2")
-
         Greeting("Jose Paredes")
         Greeting("Jose Paredes x2")
         Greeting("Jose Paredes x3")
-
     }
 }
