@@ -6,6 +6,7 @@ build/
 */build/
 
 local.properties
+
 captures/
 .externalNativeBuild/
 
@@ -15,3 +16,5 @@ captures/
 
 .DS_Store
 Thumbs.db
+
+.cxx/
